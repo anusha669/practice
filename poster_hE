@@ -1,0 +1,40 @@
+Tim is a big fan of TV Series. The wall of his hostel room is full of posters of different TV Series.
+Once he got curious and wanted to find out the area of the wall which is not covered by posters.
+But then he found another TV Series to watch and he gave this task to you.
+You are given the dimension of the wall  and  (length and height), the number of posters in his room  and the coordinates of two 
+diagonally opposite corners of the posters. The posters are in the form of rectangle and they are alligned parallel to the side of the wall.
+Also note that some of the posters may overlap some other posters.
+
+5 6         // L H
+3           // num of posters
+0 0 2 2       // cordinates x1,y1  x2,y2
+1 1 4 3
+4 0 5 6
+
+15  // area left uncovered
+
+import java.util.Scanner;
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+      int L,H,t,x1,x2,y1,y2,c;
+      Scanner sc = new Scanner(System.in);
+      L = sc.nextInt();
+      H = sc.nextInt();
+      t = sc.nextInt();
+      int a[][]  = new int[L+1][H+1];
+      while(t>0)
+      {
+          x1 = sc.nextInt(); y1 = sc.nextInt();x2 = sc.nextInt(); y2 =sc.nextInt();
+          for(int i=x1;i<x2;i++)
+            for(int j=y1;j<y2;j++)
+                a[i][j] = '*';
+          t--;
+      }
+      for(int i=0;i<L;i++)
+        for(int j=0;j<H;j++)
+            if(a[i][j]!='*')
+                t++;
+     System.out.println(t);
+     sc.close();
+    }}
+   
