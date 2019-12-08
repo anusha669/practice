@@ -26,3 +26,8 @@ class Codathon{
         System.out.print(alpha[i]);
        }
     }}
+
+
+
+1001,101,01,10
+ieab
