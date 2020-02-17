@@ -1,0 +1,36 @@
+test = int(input())
+stack = list()
+brac = {'}':'{',']':'[',')':'('}
+while test>0:
+    br = input()
+    top = -1
+    for b in br:
+        if b in ['(',"[","{"]:
+            stack.append(b)
+            top += 1
+        elif top >-1 and brac[b] == stack[top]:
+            stack.pop(top)
+            top -= 1
+        else:
+            print("NO")
+            break
+    else:
+        if len(stack) == 0:
+            print("YES")
+        else:
+            print("NO")
+    stack.clear()
+    test -= 1
+    
+    
+    
+ I/p:
+ 3
+{[()]}
+{[(])}
+{{[[(())]]}}
+
+O/P:
+YES
+NO
+YES
