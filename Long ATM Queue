@@ -1,0 +1,29 @@
+n = int(input())
+h = [int(ele) for ele in input().split()]
+c = 0
+for i in range(0,n-1):
+    if h[i] > h[i+1]:
+        c += 1
+c += 1
+print(c)
+
+
+Due to the demonetization move, there is a long queue of people in front of ATMs. Due to withdrawal limit per person per day, people 
+come in groups to withdraw money. Groups come one by one and line up behind the already present queue. The groups have a strange way
+of arranging themselves.In a particular group, the group members arrange themselves in increasing order of their height(not necessarily 
+strictly increasing).
+Since groups are standing behind each other, one cannot differentiate between different groups and the exact count cannot be given.
+Can you tell him the minimum number of groups that can be observed in the queue?
+
+logic: check if next element is smaller than prev if so incr count by 1 .
+At n-2 position if h[n-2] > h[n-1] c += 1 (they belong to different groups) but now h[n-1] (last person is diff grp but that isn't checked 
+in for loop) so incr c after loop
+or
+if they belong to same grp, since h[n-2] is less than h[n-1] the count is never incr so incr c after loop
+
+i/P:
+4
+1 2 3 4
+
+o/p:
+1
