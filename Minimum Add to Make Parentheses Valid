@@ -1,0 +1,27 @@
+p = input()
+stack = list()
+top = -1
+c = 0
+for ch in p:
+    if ch == ')' and top >-1:
+        stack.pop(top)
+        top -= 1
+    elif ch == ')':
+        c += 1
+    else:
+        stack.append('(')
+        top += 1
+c += len(stack)
+print(c)
+
+
+Given a string S of '(' and ')' parentheses, we add the minimum number of parentheses ( '(' or ')', and in any positions ) so that
+the resulting parentheses string is valid.
+Formally, a parentheses string is valid if and only if:
+    It is the empty string, or
+    It can be written as AB (A concatenated with B), where A and B are valid strings, or
+    It can be written as (A), where A is a valid string.
+Given a parentheses string, return the minimum number of parentheses we must add to make the resulting string valid.
+I/P : ()))((          
+
+o/p: 4
